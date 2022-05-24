@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         PokemonsPage.ROUTE: (_) => PokemonsPage(),
         PokemonDetailPage.ROUTE: (_) => PokemonDetailPage(),
       },
+      theme: ThemeData(buttonColor: Colors.white),
     );
   }
 }
