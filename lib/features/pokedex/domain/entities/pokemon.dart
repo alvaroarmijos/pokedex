@@ -2,26 +2,16 @@ import 'package:equatable/equatable.dart';
 
 class Pokemon extends Equatable {
   Pokemon({
-    this.baseExperience,
-    this.height,
-    this.heldItems,
-    this.id,
-    this.isDefault,
-    this.name,
-    this.weight,
-    this.abilities,
-    this.types,
-  }) : super([
-          baseExperience,
-          height,
-          heldItems,
-          id,
-          isDefault,
-          name,
-          weight,
-          abilities,
-          types
-        ]);
+    required this.baseExperience,
+    required this.height,
+    required this.heldItems,
+    required this.id,
+    required this.isDefault,
+    required this.name,
+    required this.weight,
+    required this.abilities,
+    required this.types,
+  });
 
   final int baseExperience;
   final int height;
@@ -32,36 +22,66 @@ class Pokemon extends Equatable {
   final int weight;
   final List<AbilityElement> abilities;
   final List<Type> types;
+
+  @override
+  List<Object?> get props => [
+        [
+          baseExperience,
+          height,
+          heldItems,
+          id,
+          isDefault,
+          name,
+          weight,
+          abilities,
+          types
+        ]
+      ];
 }
 
 class AbilityElement extends Equatable {
   AbilityElement({
-    this.ability,
-    this.isHidden,
-    this.slot,
-  }) : super([ability, isHidden, slot]);
+    required this.ability,
+    required this.isHidden,
+    required this.slot,
+  });
 
   final TypeClass ability;
   final bool isHidden;
   final int slot;
+
+  @override
+  List<Object?> get props => [
+        [ability, isHidden, slot]
+      ];
 }
 
 class TypeClass extends Equatable {
   TypeClass({
-    this.name,
-    this.url,
-  }) : super([name, url]);
+    required this.name,
+    required this.url,
+  });
 
   final String name;
   final String url;
+
+  @override
+  List<Object?> get props => [
+        [name, url]
+      ];
 }
 
 class Type extends Equatable {
   Type({
-    this.slot,
-    this.type,
-  }) : super([slot, type]);
+    required this.slot,
+    required this.type,
+  });
 
   final int slot;
   final TypeClass type;
+
+  @override
+  List<Object?> get props => [
+        [slot, type]
+      ];
 }

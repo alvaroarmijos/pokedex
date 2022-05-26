@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/core/global/global_variables.dart';
 import 'package:pokedex/core/global/styles.dart';
+import 'package:pokedex/features/pokedex/presentation/bloc/pokemons/pokemons_bloc.dart';
 import 'package:pokedex/features/pokedex/presentation/widgets/previous_next_button.dart';
 
 class HeaderPokemons extends StatelessWidget {
-  const HeaderPokemons({Key key}) : super(key: key);
+  const HeaderPokemons({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +38,32 @@ class HeaderPokemons extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  PreviousNextButton(
-                    label: 'Previous',
-                    next: false,
-                    onTap: () {},
-                  ),
-                  PreviousNextButton(
-                    label: 'Next',
-                    next: true,
-                    onTap: () {},
-                  ),
+                  BlocBuilder<PokemonsBloc, PokemonsState>(
+                      builder: (context, state) {
+                    if (state.offset > 0) {
+                      return PreviousNextButton(
+                        label: 'Previous',
+                        next: false,
+                        onTap: () =>
+                            context.read<PokemonsBloc>().add(PreviousPage()),
+                      );
+                    } else {
+                      return SizedBox();
+                    }
+                  }),
+                  BlocBuilder<PokemonsBloc, PokemonsState>(
+                      builder: (context, state) {
+                    if (state.offset > GlobalVariables.MAX_POKEMONS) {
+                      return SizedBox();
+                    } else {
+                      return PreviousNextButton(
+                        label: 'Next',
+                        next: true,
+                        onTap: () =>
+                            context.read<PokemonsBloc>().add(NextPage()),
+                      );
+                    }
+                  }),
                 ],
               ),
             ),

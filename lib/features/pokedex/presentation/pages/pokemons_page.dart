@@ -15,7 +15,7 @@ class PokemonsPage extends StatelessWidget {
 }
 
 class PokemonsBody extends StatelessWidget {
-  const PokemonsBody({Key key}) : super(key: key);
+  const PokemonsBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

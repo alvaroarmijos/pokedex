@@ -4,5 +4,10 @@ class PokemonShort extends Equatable {
   final String name;
   final String url;
 
-  PokemonShort({this.name, this.url}) : super([name, url]);
+  PokemonShort({required this.name, required this.url});
+
+  @override
+  List<Object?> get props => [
+        [name, url]
+      ];
 }

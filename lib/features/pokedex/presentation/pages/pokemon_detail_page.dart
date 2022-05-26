@@ -5,7 +5,7 @@ class PokemonDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int pokemonId = ModalRoute.of(context).settings.arguments;
+    final pokemonId = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       body: Center(
         child: Text('PokemonDetailPage'),

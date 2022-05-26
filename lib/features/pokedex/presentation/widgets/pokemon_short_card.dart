@@ -7,7 +7,7 @@ import 'package:pokedex/features/pokedex/presentation/pages/pokemon_detail_page.
 
 class PokemonShortCard extends StatelessWidget {
   final PokemonShortModel pokemon;
-  const PokemonShortCard({Key key, @required this.pokemon}) : super(key: key);
+  const PokemonShortCard({Key? key, required this.pokemon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +26,11 @@ class PokemonShortCard extends StatelessWidget {
               child: Text("#${pokemon.id}", style: SubtitleStyle()),
             ),
             Text(pokemon.name, style: TitleStyle()),
-            SvgPicture.network(
-                GlobalVariables.IMAGES_POKEMON + "${pokemon.id}.svg",
-                width: 100),
+            Flexible(
+              child: SvgPicture.network(
+                  GlobalVariables.IMAGES_POKEMON + "${pokemon.id}.svg",
+                  width: 100),
+            ),
           ],
         ),
       )),
