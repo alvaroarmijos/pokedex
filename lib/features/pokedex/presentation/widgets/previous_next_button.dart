@@ -10,16 +10,17 @@ class PreviousNextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ElevatedButton(
-        onPressed: () => onTap(),
-        child: Row(
-          children: [
-            if (!next) ...[Icon(Icons.arrow_back_ios)],
-            Text(label),
-            if (next) ...[Icon(Icons.arrow_forward_ios)]
-          ],
-        ),
+    return ElevatedButton(
+      onPressed: () => onTap(),
+      child: Row(
+        children: [
+          if (!next) ...[Icon(Icons.arrow_back_ios, color: Colors.white)],
+          Text(
+            label,
+            style: TextStyle(color: Colors.white),
+          ),
+          if (next) ...[Icon(Icons.arrow_forward_ios, color: Colors.white)]
+        ],
       ),
     );
   }

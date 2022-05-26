@@ -32,8 +32,10 @@ class PokemonDetailPage extends StatelessWidget {
             ],
           );
         } else if (state is Error) {
-          return MessageDisplay(
-            message: state.message,
+          return Center(
+            child: MessageDisplay(
+              message: state.message,
+            ),
           );
         }
 
