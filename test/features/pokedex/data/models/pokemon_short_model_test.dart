@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:pokedex/features/pokedex/data/models/pokemon_short_model.dart';
 import 'package:pokedex/features/pokedex/domain/entities/pokemon_short.dart';
 
-import '../../../fixtures/fixture_reader.dart';
+import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
   final tPokemonShortModel = PokemonShortModel(

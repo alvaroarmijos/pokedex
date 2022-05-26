@@ -4,7 +4,7 @@ import 'package:get_it/get_it.dart';
 
 import 'package:pokedex/core/platform/network_info.dart';
 import 'package:pokedex/features/pokedex/data/datasources/pokemon_remote_data_surce.dart';
-import 'package:pokedex/features/pokedex/data/repositories/post_repository_impl.dart';
+import 'package:pokedex/features/pokedex/data/repositories/pokemon_repository_impl.dart';
 import 'package:pokedex/features/pokedex/domain/repositories/pokemon_repository.dart';
 import 'package:pokedex/features/pokedex/domain/usecases/get_pokemon.dart';
 import 'package:pokedex/features/pokedex/domain/usecases/get_pokemons.dart';

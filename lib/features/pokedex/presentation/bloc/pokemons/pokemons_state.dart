@@ -4,7 +4,7 @@ abstract class PokemonsState extends Equatable {
   final int offset;
   final List<PokemonShortModel> pokemons;
   const PokemonsState({
-    this.offset = -1,
+    this.offset = 0,
     this.pokemons = const [],
   });
 
