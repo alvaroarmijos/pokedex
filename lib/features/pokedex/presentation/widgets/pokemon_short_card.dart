@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pokedex/core/global/global_variables.dart';
 import 'package:pokedex/core/global/styles.dart';
 import 'package:pokedex/features/pokedex/data/models/pokemon_short_model.dart';
 import 'package:pokedex/features/pokedex/presentation/pages/pokemon_detail_page.dart';
+import 'package:pokedex/features/pokedex/presentation/widgets/image_pokemon.dart';
 
 class PokemonShortCard extends StatelessWidget {
   final PokemonShortModel pokemon;
@@ -26,11 +25,7 @@ class PokemonShortCard extends StatelessWidget {
               child: Text("#${pokemon.id}", style: SubtitleStyle()),
             ),
             Text(pokemon.name, style: TitleStyle()),
-            Flexible(
-              child: SvgPicture.network(
-                  GlobalVariables.IMAGES_POKEMON + "${pokemon.id}.svg",
-                  width: 100),
-            ),
+            ImagePokemon(pokemonId: pokemon.id),
           ],
         ),
       )),

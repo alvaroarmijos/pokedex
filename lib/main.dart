@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex/features/pokedex/presentation/bloc/pokemon/pokemon_bloc.dart';
 import 'package:pokedex/features/pokedex/presentation/bloc/pokemons/pokemons_bloc.dart';
 import 'package:pokedex/features/pokedex/presentation/pages/pokemon_detail_page.dart';
 import 'package:pokedex/features/pokedex/presentation/pages/pokemons_page.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => di.sl<PokemonsBloc>()),
+        BlocProvider(create: (_) => di.sl<PokemonBloc>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -8,6 +8,7 @@ import 'package:pokedex/features/pokedex/data/repositories/post_repository_impl.
 import 'package:pokedex/features/pokedex/domain/repositories/pokemon_repository.dart';
 import 'package:pokedex/features/pokedex/domain/usecases/get_pokemon.dart';
 import 'package:pokedex/features/pokedex/domain/usecases/get_pokemons.dart';
+import 'package:pokedex/features/pokedex/presentation/bloc/pokemon/pokemon_bloc.dart';
 import 'package:pokedex/features/pokedex/presentation/bloc/pokemons/pokemons_bloc.dart';
 
 final sl = GetIt.instance;
@@ -20,6 +21,12 @@ Future<void> init() async {
       getPokemons: sl(),
     ),
   );
+  sl.registerFactory(
+    () => PokemonBloc(
+      getPokemon: sl(),
+    ),
+  );
+
   // Use cases
   sl.registerLazySingleton(() => GetPokemons(sl()));
   sl.registerLazySingleton(() => GetPokemon(sl()));

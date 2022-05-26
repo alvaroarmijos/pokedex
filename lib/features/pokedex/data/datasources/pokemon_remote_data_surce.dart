@@ -47,8 +47,10 @@ class PokemonRemoteDataSourceImpl implements PokemonRemoteDataSource {
       headers: {'Content-Type': 'application/json'},
     );
 
+    print(response.body);
+
     if (response.statusCode == 200) {
-      return PokemonModel.fromJson(json.decode(response.body));
+      return PokemonModel.fromJson(response.body);
     } else {
       throw ServerException();
     }
