@@ -2,7 +2,7 @@
 
 App that lists all Pokemon and their details from [PokeApi](https://pokeapi.co/ "PokeApi"). This app is built with Flutter, focused on Android design.
 
-For this poject Clean Architecture was choosen.  Beacause keep the code clean and tested are the two most important development practices. Even state management patterns like BLoC are not sufficient in themselves to allow for easily extendable codebase.
+For this poject Clean Architecture was choosen.  Beacause keep the code clean and tested are the two most important development practices. Even state management patterns like BLoC are not sufficient in themselves to allow for easily extendable codebase. If you want to learn more about this, you can read my article [here](https://medium.com/@alvaro.armijoss/improve-your-flutter-development-with-clean-architecture-and-tdd-4c13e6af4f18 "here").
 
 For this we should all strive to separate code into independent layers and depend on abstractions instead of concrete implementations.
 
